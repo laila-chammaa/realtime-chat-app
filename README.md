@@ -27,4 +27,4 @@ Deployed the client side on Netlify, and the server side on Heroku.
 
 
 ### In the future:
-Might work on a light mode, dark mode, and adding some tests with jest.
+Might work on a light and dark mode, and adding some tests with jest.
