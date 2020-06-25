@@ -7,15 +7,19 @@ try it out:
 
 A chat app that allows users to enter rooms. A simple and seamless way for people to chat.
 
-### Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
 ### Built With
 
 * front-end: react.js, socket.io-client, react-scroll-to-bottom, react-emoji, query-string
 
 * backend: node.js, socket.io, cors, express
+
+### Notes:
+
+socket.io for realtime data transfer
+features: emojis get read as emojis, scrolling, button to go down to the most recent message
+larger scale project with 7 components, each with css file, used modern project structure
+used state hooks and props for data flow
+read extensively socket.io documentation.
 
 ### Deployment
 
