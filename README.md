@@ -8,4 +8,8 @@ backend: nodejs, socket.io, cors, express
 
 try it out:
 
-https://laila-chat-app.netlify.app/
+# https://laila-chat-app.netlify.app/
+
+in the future:
+
+might work on light mode, and build some tests with jest
