@@ -1,0 +1,33 @@
+.form {
+  display: flex;
+  border-top: 2px solid #d3d3d3;
+}
+
+.input {
+  border: none;
+  border-radius: 0;
+  padding: 5%;
+  width: 80%;
+  font-size: 1.2em;
+  font-family: "Nunito", sans-serif;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+.sendButton {
+  color: white !important;
+  text-transform: lowercase;
+  text-decoration: none;
+  background: rgba(122, 47, 122, 0.774);
+  padding: 20px;
+  display: inline-block;
+  border: none;
+  width: 21%;
+  border-radius: 0 0 7px 0;
+  font-family: "Nunito", sans-serif;
+  font-size: 17px;
+}

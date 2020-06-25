@@ -1,0 +1,86 @@
+html,
+body {
+  font-family: "Nunito", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+  text-transform: lowercase;
+}
+
+.joinOuterContainer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  align-items: center;
+  background-color: rgb(75, 30, 75);
+}
+
+.joinInnerContainer {
+  width: 26%;
+  background-color: rgba(22, 14, 14, 0.87);
+  padding: 60px;
+  border-radius: 20px;
+}
+
+.joinInput {
+  border-radius: 0;
+  padding: 15px 20px;
+  width: 100%;
+  border: none;
+  font-family: "Nunito", sans-serif;
+}
+
+.heading {
+  color: white;
+  font-size: 2.5em;
+  padding-bottom: 10px;
+  border-bottom: 2px solid white;
+}
+
+.button {
+  color: #fff;
+  text-transform: lowercase;
+  background: rgb(122, 47, 122);
+  padding: 17px;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  width: 100%;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+/*mobile phones*/
+@media (min-width: 200px) and (max-width: 480px) {
+  .joinOuterContainer {
+    height: 100%;
+  }
+  .joinInnerContainer {
+    width: 90%;
+  }
+}
+@media (min-width: 480px) and (max-width: 1215px) {
+  .joinOuterContainer {
+    height: 100%;
+  }
+  .joinInnerContainer {
+    width: 50%;
+  }
+}
+
+button:focus {
+  outline: 0;
+}

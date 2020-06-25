@@ -1,0 +1,8 @@
+{
+  "short_name": "chat app",
+  "name": "by laila chamma'a",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
