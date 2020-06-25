@@ -11,7 +11,7 @@ import TextContainer from "../TextContainer/TextContainer.js";
 let socket;
 
 const Chat = ({ location }) => {
-  const ENDPOINT = "localhost:5000";
+  const ENDPOINT = "https://laila-chat-app.herokuapp.com/";
 
   const [name, setName] = useState("");
   const [room, setRoom] = useState("");

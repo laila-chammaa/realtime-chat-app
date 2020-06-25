@@ -11,7 +11,9 @@ const addUser = ({ id, name, room }) => {
 
   if (!name || !room) return { error: "Username and room are required." };
   if (existingUser) {
+    //change their name
     name = name + "." + id[3];
+    id = id + id[4];
   }
 
   //else create the user
