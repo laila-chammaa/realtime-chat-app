@@ -13,9 +13,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Demo
 
-### Running the tests
-
-Explain how to run the automated tests for this system
+<img src="images/join.png" data-canonical-src="images/join.png" width="277" height="353" />      <img src="images/chat%20room.png" data-canonical-src="images/chat%20room.png" width="667" height="327" />
 
 ### Deployment
 
