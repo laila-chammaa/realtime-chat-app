@@ -1,6 +1,9 @@
 const users = [];
 
 const addUser = ({ id, name, room }) => {
+
+  if (!name || !room) return { error: "Username and room are required." };
+
   name = name.trim().toLowerCase();
   room = room.trim().toLowerCase();
 
@@ -9,7 +12,6 @@ const addUser = ({ id, name, room }) => {
     (user) => user.room === room && user.name === name
   );
 
-  if (!name || !room) return { error: "Username and room are required." };
   if (existingUser) {
     //change their name
     name = name + "." + id[3];
@@ -27,10 +29,12 @@ const removeUser = (id) => {
   if (index !== -1) {
     return users.splice(index, 1)[0];
   }
+  //if no id found
+  return null;
 };
 
 const getUser = (id) => users.find((user) => user.id === id);
 
 const getUsersInRoom = (room) => users.filter((user) => user.room === room);
 
-module.exports = { addUser, removeUser, getUser, getUsersInRoom };
+module.exports = { addUser, removeUser, getUser, getUsersInRoom, users };

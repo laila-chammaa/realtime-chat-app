@@ -15,6 +15,12 @@ const io = socketio(server);
 
 app.use(router);
 app.use(cors());
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+});
 //admin generated messages are going to be "message"
 //while user generated messages will be "sendMessage"
 
@@ -24,7 +30,7 @@ io.on("connect", (socket) => {
     const { error, user } = addUser({ id: socket.id, name, room });
 
     if (error) {
-      console.log("error, username already taken.");
+      console.log("error adding user to room.");
       return callback(error);
     }
     //else
