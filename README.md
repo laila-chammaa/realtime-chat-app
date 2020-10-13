@@ -19,6 +19,8 @@ used socket.io for realtime data transfer
 
 features: emojis get read as emojis, scrolling, button to go down to the most recent message
 
+new: added unit, integration and end-to-end tests with jest and puppeteer!
+
 larger scale project with 7 components, each with css file, used modern project structure
 
 used state hooks and props for data flow
@@ -35,4 +37,4 @@ Deployed the client side on Netlify, and the server side on Heroku.
 
 
 ### In the future:
-Might work on a light and dark mode, and adding some tests with jest.
+Might work on a light and dark mode.
