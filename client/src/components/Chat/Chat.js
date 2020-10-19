@@ -61,6 +61,8 @@ const Chat = ({ location }) => {
       event.preventDefault();
       // the callback function just clears the message state to an empty string
       socket.emit("sendMessage", message, () => setMessage(""));
+    } else {
+      event.preventDefault();
     }
   };
 
