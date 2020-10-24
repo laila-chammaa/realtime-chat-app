@@ -24,10 +24,14 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 14.10.1
-    - run: npm ci
+    - name: install client dependencies
+      run: npm ci
       working-directory: client
-    - run: npm ci
+    - name: install server dependencies
+      run: npm ci
       working-directory: server
-    - run: npm test
+    - name: running jest and puppeteer tests
+      run: npm test
       working-directory: server
     - run: npm run build --if-present
+      working-directory: client
