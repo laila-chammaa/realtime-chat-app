@@ -64,18 +64,24 @@ users.splice(0,users.length);
 
 //e2e tests!!
 test('should enter 2 users into a room', async () => {
+    let browser = null;
+    try {
     users.splice(0,users.length);
-    const browser = await puppeteer.launch({
+    browser = await puppeteer.launch({
         headless: true,
         // slowMo: 10,
         // args: ["--window-size=1920,1080"]
     });
+    
+    //generating random usernames
+    const username1 = Math.random().toString(36).slice(2);
+    const username2 = Math.random().toString(36).slice(2)
 
     //starting user1
     const page = await browser.newPage();
     await page.goto("http://127.0.0.1:3000");
     await page.click("input.joinInput");
-    await page.type("input.joinInput", "sawsan");
+    await page.type("input.joinInput", username1);
     await page.click("input.joinInput.mt-20");
     await page.type("input.joinInput.mt-20", "comp371");
     await page.click("button.button.mt-20");
@@ -83,14 +89,14 @@ test('should enter 2 users into a room', async () => {
     await page.waitForTimeout(4000);
 
     //checking if admin welcome message is sent
-    var adminText = await page.$eval("div.messageBox.backgroundLight", (el) => el.textContent);
-    expect(adminText).toBe("sawsan, welcome to the room comp371.");
+    var adminText = await page.evaluate(() => Array.from(document.querySelectorAll("div.messageBox"), element => element.textContent));
+    expect(adminText[0]).toBe(username1 + ", welcome to the room comp371.");
 
     //starting user2
     const page2 = await browser.newPage();
     await page2.goto("http://127.0.0.1:3000");
     await page2.click("input.joinInput");
-    await page2.type("input.joinInput", "laila");
+    await page2.type("input.joinInput", username2);
     await page2.click("input.joinInput.mt-20");
     await page2.type("input.joinInput.mt-20", "comp371");
     await page2.click("button.button.mt-20");
@@ -98,8 +104,8 @@ test('should enter 2 users into a room', async () => {
     await page.waitForTimeout(4000);
 
     //checking if admin welcome message is sent
-    adminText = await page2.$eval("div.messageBox.backgroundLight", (el) => el.textContent);
-    expect(adminText).toBe("laila, welcome to the room comp371.");
+    adminText = await page2.evaluate(() => Array.from(document.querySelectorAll("div.messageBox.backgroundLight"), element => element.textContent));
+    expect(adminText[0]).toBe(username2 + ", welcome to the room comp371.");
 
     //--------------------------------------
 
@@ -107,29 +113,35 @@ test('should enter 2 users into a room', async () => {
     await page.waitForTimeout(4000);
 
     adminText = await page.evaluate(() => Array.from(document.querySelectorAll("div.messageBox"), element => element.textContent));
-    expect(adminText[1]).toBe("laila has joined.");
+    expect(adminText[1]).toBe(username2 + " has joined.");
 
     //checking if user1 is already in the room (UI)
     var online = await page.evaluate(() => Array.from(document.querySelectorAll(".activeItem"), element => element.textContent));
-    expect(online[0]).toBe("sawsan");
-    expect(online[1]).toBe("laila");
+    expect(online).toEqual(expect.arrayContaining([username1, username2]));
     
     //user1 sending a text hello
     await page.click("input.input");
     await page.type("input.input", "hi, laila!!");
     await page.click("button.sendButton");
 
+    await page.waitForTimeout(4000);
+    
     //checking if text is sent
-    var text = await page.$eval("p.messageText.colorWhite", (el) => el.textContent);
-    expect(text).toBe("hi, laila!!");
+    var text = await page.evaluate(() => Array.from(document.querySelectorAll("p.messageText"), element => element.textContent));
+    expect(text).toEqual(expect.arrayContaining(["hi, laila!!"]));
 
     //checking if text is received
-    text = await page.evaluate(() => Array.from(document.querySelectorAll("p.messageText"), element => element.textContent));
-    expect(text[2]).toBe("hi, laila!!");
+    text = await page2.evaluate(() => Array.from(document.querySelectorAll("p.messageText"), element => element.textContent));
+    expect(text).toEqual(expect.arrayContaining(["hi, laila!!"]));
     
     await page.close();
     await page2.close();
     await browser.close();
+    }
+    //close browser even if test fails
+    finally {
+        browser.close();
+    }
 }, 50000);
 
 test('users array should be empty' , () => {
