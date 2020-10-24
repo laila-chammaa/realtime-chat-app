@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: rgb(75, 30, 75);
+  background-color: #beb9d7;
 }
 
 .container {
@@ -14,6 +14,7 @@
   border-radius: 8px;
   height: 60%;
   width: 35%;
+  font-family: 'Roboto Mono';
 }
 
 @media (min-width: 200px) and (max-width: 480px) {

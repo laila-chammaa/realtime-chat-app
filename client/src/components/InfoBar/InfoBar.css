@@ -2,8 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(122, 47, 122, 0.774);
-  border-radius: 4px 4px 0 0;
+  background-color: #3c3c64;
   height: 60px;
   width: 100%;
 }

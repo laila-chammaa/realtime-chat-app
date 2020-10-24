@@ -20,13 +20,14 @@ body {
   text-align: center;
   height: 100vh;
   align-items: center;
-  background-color: rgb(75, 30, 75);
+  background-color: #beb9d7;
 }
 
 .joinInnerContainer {
   width: 26%;
-  background-color: rgba(22, 14, 14, 0.87);
+  background-color: #3c3c64;
   padding: 60px;
+  padding-top: 30px;
   border-radius: 20px;
 }
 
@@ -39,16 +40,17 @@ body {
 }
 
 .heading {
-  color: white;
+  color: #7acde2;
   font-size: 2.5em;
-  padding-bottom: 10px;
+  padding-bottom: 30px;
   border-bottom: 2px solid white;
+  font-family: 'Roboto Mono';
 }
 
 .button {
   color: #fff;
   text-transform: lowercase;
-  background: rgb(122, 47, 122);
+  background: #ac7cb8;
   padding: 17px;
   border-radius: 5px;
   display: inline-block;

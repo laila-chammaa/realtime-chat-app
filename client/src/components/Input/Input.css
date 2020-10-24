@@ -22,7 +22,7 @@ select:focus {
   color: white !important;
   text-transform: lowercase;
   text-decoration: none;
-  background: rgba(122, 47, 122, 0.774);
+  background: #3c3c64;
   padding: 20px;
   display: inline-block;
   border: none;
