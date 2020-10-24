@@ -23,6 +23,8 @@ features: emojis get read as emojis, scrolling, button to go down to the most re
 
 new: added unit, integration and end-to-end tests with jest and puppeteer!
 
+new: used github actions to automate build, and to test before integrating changes
+
 larger scale project with 7 components, each with css file, used modern project structure
 
 used state hooks and props for data flow
