@@ -79,7 +79,7 @@ test('should enter 2 users into a room', async () => {
 
     //starting user1
     const page = await browser.newPage();
-    await page.goto("http://127.0.0.1:3000");
+    await page.goto("http://laila-chat-app.netlify.app");
     await page.click("input.joinInput");
     await page.type("input.joinInput", username1);
     await page.click("input.joinInput.mt-20");
@@ -94,7 +94,7 @@ test('should enter 2 users into a room', async () => {
 
     //starting user2
     const page2 = await browser.newPage();
-    await page2.goto("http://127.0.0.1:3000");
+    await page2.goto("http://laila-chat-app.netlify.app");
     await page2.click("input.joinInput");
     await page2.type("input.joinInput", username2);
     await page2.click("input.joinInput.mt-20");
@@ -125,7 +125,7 @@ test('should enter 2 users into a room', async () => {
     await page.click("button.sendButton");
 
     await page.waitForTimeout(4000);
-    
+
     //checking if text is sent
     var text = await page.evaluate(() => Array.from(document.querySelectorAll("p.messageText"), element => element.textContent));
     expect(text).toEqual(expect.arrayContaining(["hi, laila!!"]));
