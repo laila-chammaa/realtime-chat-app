@@ -6,10 +6,6 @@ on:
    push:
      branches: [ master ]
 
-defaults:
-   run:
-     working-directory: ./client
-
  # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
    # This workflow contains a single job called "build"
@@ -39,6 +35,4 @@ jobs:
          env:
            NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
            NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-           NETLIFY_BASE: client
-           NETLIFY_CMD: npm build
-           NETLIFY_DIR: client
+           NETLIFY_DIR: client/build
