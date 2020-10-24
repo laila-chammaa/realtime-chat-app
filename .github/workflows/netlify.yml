@@ -24,11 +24,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      - name: Netlify Deploy 2
+      - name: Netlify Deploy
         uses: netlify/actions/build@master
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_BASE: client
-          NETLIFY_CMD: npm build
+          NETLIFY_CMD: netlify deploy
           NETLIFY_DIR: client/build
