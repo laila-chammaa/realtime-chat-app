@@ -2,16 +2,16 @@ name: Netlify Deploy
 
  # Controls when the action will run. Triggers the workflow on push or pull request
  # events but only for the master branch
- on:
+on:
    push:
      branches: [ master ]
 
- defaults:
+defaults:
    run:
      working-directory: ./client
 
  # A workflow run is made up of one or more jobs that can run sequentially or in parallel
- jobs:
+jobs:
    # This workflow contains a single job called "build"
    build:
      # The type of runner that the job will run on
