@@ -38,15 +38,7 @@ Deployed the client side on Netlify, and the server side on Heroku.
 ### Load tests
 Used [loadtest](https://www.npmjs.com/package/loadtest), an npm package
 
-Completed requests:  9402
-
-Total errors:        0
-
-Total time:          50 s
-
-Requests per second: 188
-
-Mean latency:        1003.2 ms
+<img src="loadtest.png" data-canonical-src="loadtest.png" width=40%/>
 
 ### Demo
 
