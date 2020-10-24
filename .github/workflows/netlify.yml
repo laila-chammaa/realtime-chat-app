@@ -24,6 +24,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - run: npm run build --if-present
+        working-directory: client
+      
       - name: Netlify Deploy
         uses: netlify/actions/build@master
         env:
