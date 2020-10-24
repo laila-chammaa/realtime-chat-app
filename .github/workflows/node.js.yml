@@ -24,11 +24,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 14.10.1
-    - name: Access client directory
-      run: cd client
     - run: npm ci
-    - name: Access server directory
-      run: cd server
+      working-directory: client
     - run: npm ci
+      working-directory: server
     - run: npm test
+      working-directory: server
     - run: npm run build --if-present
