@@ -1,5 +1,7 @@
 try it out:
 
+<img src="images/sparkles.svg" data-canonical-src="images/sparkles.png"/>
+
 ## https://laila-chat-app.netlify.app/
 
 
