@@ -35,6 +35,19 @@ read up extensively on socket.io documentation.
 
 Deployed the client side on Netlify, and the server side on Heroku.
 
+### Load tests
+Used [loadtest](https://www.npmjs.com/package/loadtest), an npm package
+
+Completed requests:  9402
+
+Total errors:        0
+
+Total time:          50 s
+
+Requests per second: 188
+
+Mean latency:        1003.2 ms
+
 ### Demo
 
 <img src="images/join.png" data-canonical-src="images/join.png" width="277" height="353" />      <img src="images/chat%20room.png" data-canonical-src="images/chat%20room.png" width="667" height="327" />
@@ -42,3 +55,7 @@ Deployed the client side on Netlify, and the server side on Heroku.
 
 ### In the future:
 Might work on a light and dark mode.
+
+Load tests
+
+electron desktop
