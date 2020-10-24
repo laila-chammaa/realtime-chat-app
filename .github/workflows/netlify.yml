@@ -23,6 +23,15 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+     
+      - name: Use Node.js 14
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.10.1
+
+      - name: install client dependencies
+        run: npm ci
+        working-directory: client
 
       - run: npm run build --if-present
         working-directory: client
