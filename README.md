@@ -25,6 +25,8 @@ new: added unit, integration and end-to-end tests with jest and puppeteer!
 
 new: used github actions to automate build, and to test before integrating changes
 
+new: made an desktop ver using electron https://github.com/laila-chammaa/electron-chat-app
+
 larger scale project with 7 components, each with css file, used modern project structure
 
 used state hooks and props for data flow
@@ -49,5 +51,3 @@ Used [loadtest](https://www.npmjs.com/package/loadtest), an npm package
 Might work on a light and dark mode.
 
 Load tests
-
-electron desktop
