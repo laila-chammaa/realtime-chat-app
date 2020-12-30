@@ -49,5 +49,3 @@ Used [loadtest](https://www.npmjs.com/package/loadtest), an npm package
 
 ### In the future:
 Might work on a light and dark mode.
-
-Load tests
